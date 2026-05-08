@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: floralwhite;
+  color: #2c2b28;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.main-header {
+  background: darkgreen;
+  padding: 1rem 0;
+  border-bottom: 4px solid goldenrod;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: wheat;
+  background: rgba(255,255,240,0.08);
+  padding: 0.3rem 1rem;
+  border-left: 4px solid goldenrod;
+}
+
+.logo span {
+  color: goldenrod;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: cornsilk;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border-bottom-color: goldenrod;
+  color: khaki;
+}
+
+.page-hero {
+  background: linear-gradient(107deg, darkslategray 0%, seagreen 100%);
+  padding: 3rem 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 5px solid goldenrod;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  color: honeydew;
+}
+
+.tips-section {
+  padding: 2rem 0 3rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tip-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 28px;
+  border: 1px solid bisque;
+  box-shadow: 0 10px 20px -8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  margin: 0.25rem;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  border-color: goldenrod;
+  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.tip-card h3 {
+  font-size: 1.5rem;
+  color: darkgreen;
+  margin-bottom: 0.8rem;
+}
+
+.tip-card p {
+  color: dimgray;
+  margin: 0.75rem 0;
+}
+
+.tip-card ul {
+  margin: 0.75rem 0 0.75rem 1.5rem;
+  color: dimgray;
+}
+
+.tip-card li {
+  margin: 0.4rem 0;
+}
+
+.tip-note {
+  background: lightyellow;
+  padding: 0.6rem 1rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  border-left: 3px solid goldenrod;
+}
+
+.table-section {
+  margin: 3rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: darkgreen;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: goldenrod;
+  margin: 0.8rem auto 0;
+  border-radius: 4px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid wheat;
+  background: white;
+  margin: 1.5rem 0;
+}
+
+.tips-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tips-table th,
+.tips-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid linen;
+}
+
+.tips-table th {
+  background-color: darkgreen;
+  color: wheat;
+  font-weight: 700;
+}
+
+.tips-table tr:hover {
+  background-color: lightyellow;
+}
+
+.table-note {
+  text-align: center;
+  font-style: italic;
+  color: dimgray;
+  margin-top: 1rem;
+}
+
+.packing-section {
+  margin: 3rem 0;
+}
+
+.packing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.packing-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 40px;
+  text-align: center;
+  border: 1px solid wheat;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.packing-item:hover {
+  background: goldenrod;
+  color: darkgreen;
+  border-color: goldenrod;
+  transform: scale(1.02);
+}
+
+.cta-box {
+  background: darkgreen;
+  padding: 2.5rem;
+  border-radius: 32px;
+  text-align: center;
+  margin: 3rem 0 1rem;
+  border: 2px solid goldenrod;
+}
+
+.cta-box h3 {
+  font-size: 1.8rem;
+  color: wheat;
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  color: honeydew;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: goldenrod;
+  color: darkgreen;
+  padding: 12px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.cta-btn:hover {
+  background: darkgoldenrod;
+  transform: translateY(-2px);
+}
+
+.footer {
+  background: #1e2a24;
+  color: lightgray;
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 3rem;
+  border-top: 4px solid goldenrod;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-col h4 {
+  color: goldenrod;
+  margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+  color: lightgray;
+  text-decoration: none;
+  display: block;
+  margin: 0.4rem 0;
+}
+
+.footer-col a:hover {
+  color: goldenrod;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.2rem;
+  border-top: 1px solid #3a4d3e;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  .packing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

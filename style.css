@@ -1,0 +1,85 @@
+/* style.css - Unified Stylesheet for Lesotho Untamed */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+    --primary: darkgreen;
+    --accent: goldenrod;
+    --bg-main: floralwhite;
+    --white: white;
+    --text: #2c2b28;
+    --muted: dimgray;
+    --shadow: 0 10px 20px -8px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg-main); 
+    color: var(--text); 
+    line-height: 1.6; 
+}
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* Navigation */
+.main-header {
+    background: var(--primary);
+    padding: 1rem 0;
+    border-bottom: 4px solid var(--accent);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { 
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem; color: wheat; 
+    padding: 0.3rem 1rem; border-left: 4px solid var(--accent);
+}
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { 
+    color: cornsilk; text-decoration: none; font-weight: 600; 
+    transition: 0.3s; border-bottom: 2px solid transparent;
+}
+.nav-links a:hover, .nav-links a.active { color: khaki; border-bottom-color: var(--accent); }
+
+/* Hero */
+.page-hero {
+    background: linear-gradient(107deg, #1b2e25 0%, var(--primary) 100%);
+    padding: 4rem 0; text-align: center; border-bottom: 5px solid var(--accent); color: white;
+}
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+
+/* Grid & Cards */
+.section-padding { padding: 40px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+
+.card { 
+    background: var(--white); border-radius: 28px; overflow: hidden; 
+    border: 1px solid bisque; box-shadow: var(--shadow); transition: 0.3s;
+}
+.card:hover { transform: translateY(-8px); border-color: var(--accent); }
+
+.card-img { height: 220px; background-size: cover; background-position: center; border-bottom: 3px solid var(--accent); }
+.card-content { padding: 1.5rem; }
+.card-content h3 { color: var(--primary); font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+
+/* Tables */
+.table-wrapper { overflow-x: auto; border-radius: 20px; background: white; border: 1px solid wheat; margin: 2rem 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 1.2rem; text-align: left; border-bottom: 1px solid linen; }
+th { background: var(--primary); color: wheat; }
+
+/* Footer */
+.footer { background: #15221b; color: lightgray; padding: 3rem 0; border-top: 5px solid var(--accent); margin-top: 4rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+.footer h4 { color: var(--accent); margin-bottom: 15px; }
+.footer a { color: lightgray; text-decoration: none; display: block; margin-bottom: 5px; }
+
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; }
+    .nav-links { gap: 1rem; margin-top: 15px; }
+}

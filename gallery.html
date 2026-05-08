@@ -1,0 +1,633 @@
+<html>
+<head>
+   <title>Lesotho Gallery and Social | Visual Journey</title>
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: floralwhite;
+      color: #2c2b28;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .main-header {
+      background: darkgreen;
+      padding: 1rem 0;
+      border-bottom: 4px solid goldenrod;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: wheat;
+      font-family: 'Playfair Display', serif;
+      background: rgba(255,255,240,0.08);
+      padding: 0.3rem 1rem;
+      border-left: 4px solid goldenrod;
+    }
+
+    .logo span {
+      color: goldenrod;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: cornsilk;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: goldenrod;
+      color: khaki;
+    }
+
+    .page-hero {
+      background: linear-gradient(107deg, darkslategray 0%, seagreen 100%);
+      padding: 3rem 0;
+      margin-bottom: 2.5rem;
+      border-bottom: 5px solid goldenrod;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 2.8rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-hero p {
+      font-size: 1.2rem;
+      color: honeydew;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: darkgreen;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .section-title span {
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: goldenrod;
+      margin: 0.8rem auto 0;
+      border-radius: 4px;
+    }
+
+    .gallery-section {
+      padding: 1rem 0 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid bisque;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid goldenrod;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 1.2rem;
+    }
+
+    .gallery-caption h3 {
+      color: darkgreen;
+      margin-bottom: 0.4rem;
+    }
+
+    .gallery-caption p {
+      color: dimgray;
+      font-size: 0.9rem;
+    }
+
+    .social-section {
+      background: honeydew;
+      padding: 3rem 0;
+      margin: 2rem 0;
+      border-top: 5px solid goldenrod;
+      border-bottom: 5px solid goldenrod;
+    }
+
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .social-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 32px;
+      text-align: center;
+      width: 200px;
+      border: 1px solid lightgreen;
+      transition: transform 0.2s;
+      margin: 0.5rem;
+    }
+
+    .social-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .social-icon {
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .social-card h3 {
+      margin-bottom: 0.5rem;
+      color: darkgreen;
+    }
+
+    .social-card p {
+      font-size: 0.85rem;
+      color: dimgray;
+      margin-bottom: 1rem;
+    }
+
+    .social-card a {
+      display: inline-block;
+      background: darkgreen;
+      color: white;
+      padding: 6px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .social-card a:hover {
+      background: goldenrod;
+      color: darkgreen;
+    }
+
+    .hashtag-box {
+      text-align: center;
+      background: white;
+      padding: 1.8rem;
+      border-radius: 48px;
+      max-width: 700px;
+      margin: 2rem auto 0;
+      border: 1px solid goldenrod;
+    }
+
+    .hashtag-box p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: darkgreen;
+      margin-bottom: 0.5rem;
+    }
+
+    .hashtag-box strong {
+      color: goldenrod;
+    }
+
+    .contact-section {
+      padding: 2rem 0 3rem;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: white;
+      border-radius: 48px;
+      padding: 2rem;
+      border: 1px solid wheat;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .contact-col {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .contact-col h3 {
+      font-size: 1.7rem;
+      color: darkgreen;
+      margin-bottom: 1rem;
+    }
+
+    .contact-col p {
+      margin: 0.8rem 0;
+      color: dimgray;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px 16px;
+      border-radius: 24px;
+      border: 1px solid lightgray;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .contact-form button {
+      background: goldenrod;
+      color: darkgreen;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: darkgoldenrod;
+    }
+
+    .newsletter-col {
+      flex: 1;
+      min-width: 220px;
+      background: darkgreen;
+      padding: 1.5rem;
+      border-radius: 32px;
+      color: white;
+    }
+
+    .newsletter-col h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: wheat;
+    }
+
+    .newsletter-col p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: honeydew;
+    }
+
+    .newsletter-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-row input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 40px;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-row button {
+      background: goldenrod;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      color: darkgreen;
+    }
+
+    .newsletter-col small {
+      display: block;
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      color: lightgray;
+    }
+
+    .footer {
+      background: #1e2a24;
+      color: lightgray;
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+      border-top: 4px solid goldenrod;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .footer-col h4 {
+      color: goldenrod;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col a {
+      color: lightgray;
+      text-decoration: none;
+      display: block;
+      margin: 0.4rem 0;
+    }
+
+    .footer-col a:hover {
+      color: goldenrod;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.2rem;
+      border-top: 1px solid #3a4d3e;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1rem;
+      }
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .social-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-box {
+        flex-direction: column;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container nav-container">
+    <div class="logo">🇱🇸 <span>Lesotho</span> Untamed</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="blog.html">Travel Stories</a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="travel tips.html">Travel Tips</a></li>
+      <li><a href="gallery.html" class="active">Gallery &amp; Social</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1> Visual Chronicles</h1>
+    <p>Explore the beauty of Lesotho through our lens — and share your own journey</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="section-title"> Lesotho Through Images<span></span></h2>
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="C:\Users\Bosiu\Downloads\lesotho_website\maluti.jpg" alt="Maluti Mountains">
+        <div class="gallery-caption">
+          <h3>Maluti Mountains</h3>
+          <p>Sunset over the highest peaks of the Roof of Africa.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="fall.jpg" alt="Maletsunyane Falls">
+        <div class="gallery-caption">
+          <h3>Maletsunyane Falls</h3>
+          <p>Africa's highest single-drop waterfall, 192m of pure majesty.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="C:\Users\Bosiu\Downloads\lesotho_website\pony.jpg" alt="Basotho Pony Trek">
+        <div class="gallery-caption">
+          <h3>Pony Trekking</h3>
+          <p>Traditional Basotho ponies — the heart of highland travel.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="park.jpg" alt="Sehlabathebe National Park">
+        <div class="gallery-caption">
+          <h3>Sehlabathebe Park</h3>
+          <p>UNESCO wonderland with rock pools and rare birds.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="afriski.jpg" alt="Afriski Snow">
+        <div class="gallery-caption">
+          <h3>Afriski Resort</h3>
+          <p>Skiing in Africa — an unforgettable high-altitude experience.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="heritage.jpg" alt="Basotho Cultural Village">
+        <div class="gallery-caption">
+          <h3>Basotho Heritage</h3>
+          <p>Colorful blankets, conical hats, and timeless traditions.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="social-section">
+  <div class="container">
+    <h2 class="section-title"> Join Our Digital Storytelling Community<span></span></h2>
+    <div class="social-grid">
+
+      <div class="social-card">
+        <div class="social-icon"></div>
+        <h3>Instagram</h3>
+        <p>Daily mountain magic and behind-the-scenes</p>
+        <a href="#">@lesothountamed</a>
+      </div>
+
+      <div class="social-card">
+        <div class="social-icon"></div>
+        <h3>Facebook</h3>
+        <p>Travel tips, events and community stories</p>
+        <a href="#">Lesotho Untamed</a>
+      </div>
+
+      <div class="social-card">
+        <div class="social-icon"></div>
+        <h3>X (Twitter)</h3>
+        <p>Real-time updates and travel inspiration</p>
+        <a href="#">@VisitLesotho</a>
+      </div>
+
+      <div class="social-card">
+        <div class="social-icon"></div>
+        <h3>YouTube</h3>
+        <p>Cinematic journeys and storytelling vlogs</p>
+        <a href="#">Subscribe</a>
+      </div>
+
+      <div class="social-card">
+        <div class="social-icon"></div>
+        <h3>TikTok</h3>
+        <p>Short adventures from the Roof of Africa</p>
+        <a href="#">@lesotho.travel</a>
+      </div>
+
+    </div>
+
+    <div class="hashtag-box">
+      <p> Share your own story </p>
+      <p style="margin: 0.5rem 0; color: dimgray;">Tag us with <strong>#RoofOfAfrica</strong> and <strong>#LesothoUntamed</strong> — your photos could be featured!</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-box">
+
+      <div class="contact-col">
+        <h3>Get in Touch</h3>
+        <p><strong> Tourism Office:</strong> Maseru, Lesotho</p>
+        <p><strong> Email:</strong> hello@lesothountamed.travel</p>
+        <p><strong> Phone:</strong> +266 1234 5678</p>
+        <p><strong> Support:</strong> Mon–Fri, 9am–5pm</p>
+      </div>
+
+      <div class="contact-col">
+        <h3> Send a Message</h3>
+        <div class="contact-form">
+          <input type="text" placeholder="Your name">
+          <input type="email" placeholder="Email address">
+          <textarea rows="3" placeholder="Travel question or story..."></textarea>
+          <button type="button">Send Message</button>
+        </div>
+      </div>
+
+      <div class="newsletter-col">
+        <h3> Travel Stories Newsletter</h3>
+        <p>Get exclusive stories, deals and Lesotho inspiration.</p>
+        <div class="newsletter-row">
+          <input type="email" placeholder="Your email">
+          <button type="button">Subscribe</button>
+        </div>
+        <small>No spam. Unsubscribe anytime.</small>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Lesotho Untamed</h4>
+        <p>Inspiring authentic travel through digital storytelling and sustainable tourism.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="home.html">Home</a>
+        <a href="blog.html">Travel Stories</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="travel tips.html">Travel Tips</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#"> Instagram</a>
+        <a href="#"> Facebook</a>
+        <a href="#"> YouTube</a>
+        <a href="#"> Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Destination Travel Blog | Promoting tourism in Lesotho — Kingdom in the Sky. All images for storytelling purposes.</p>
+      <p style="margin-top: 0.5rem;"> #RoofOfAfrica #BasothoPride #LesothoTravel</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
